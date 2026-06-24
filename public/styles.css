@@ -74,6 +74,7 @@ nav a:hover {
 /* Hero */
 .hero {
     background: linear-gradient(rgba(30, 39, 46, 0.85), rgba(30, 39, 46, 0.85)), url('Images/helmet-img.jpg') no-repeat center center/cover;
+    background-attachment: fixed;
     color: #fff;
     padding: 100px 0;
     text-align: center;
@@ -257,6 +258,7 @@ nav a:hover {
     margin: 0 auto;
     padding: 40px;
     background: linear-gradient(rgba(30, 39, 46, 0.85), rgba(30, 39, 46, 0.85)), url('Images/helmet-img-2.jpg') no-repeat center center/cover;
+    background-attachment: fixed;
     border: 1px solid var(--card-border);
     color: #fff;
     border-radius: 8px;
