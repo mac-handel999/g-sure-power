@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>G-Sure Power Ltd| Electrical & Solar Experts</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="container navbar">
+            <div class="logo">
+               <img src="Images\logo-no-background.png" alt="logo image" width="85px" height="80px">
+            </div>
+            <nav>
+                <a href="#gallery">Gallery</a>
+                <a href="#services">Services</a>
+                <a href="#reviews-section">Client Reviews</a>
+                <a href="#leave-review" class="btn">Give Feedback</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-flex">
+        <div class="container hero-content">
+            <h1>Welcome To The Home Of Energy Solutions</h1>
+            <p>Affordable, Long-lasting Solar Installation For Homes, Offices, And Industries With  Premium installation, proactive maintenance, and industrial-grade electrical engineering services.</p>
+            <a href="#services" class="btn btn-primary">Explore Services</a>
+        </div>
+
+        <div class="hero-img">
+            <img src="Images/banner-img.jpg" alt="hero-image" width="280" height="280" class="img-hero">
+        </div>
+        </div>
+    </section>
+
+    <section id="services" class="services-section container">
+        <h2 class="section-title">Our Expertises</h2>
+        <div class="grid">
+            <div class="card">
+                <i class="fa-solid fa-solar-panel icon"></i>
+                <h3>Solar Installation & Maintenance</h3>
+                <p>Complete residential and commercial photovoltaic engineering layouts tailored to maximize yield
+                    performance.</p>
+            </div>
+
+            <div class="card">
+                <i class="fa-solid fa-camera icon"></i>
+                <h3>CCTV & Security System Installation</h3>
+                <p>Complete residential and commercial photovoltaic engineering layouts tailored to maximize yield
+                    performance.</p>
+            </div>
+
+            <div class="card">
+                <i class="fa-solid fa-bolt icon"></i>
+                <h3>Electrical Wiring & Maintenance</h3>
+                <p>Diagnostics, rewiring, component upgrades, and rigorous safety auditing for smooth operations.</p>
+            </div>
+            <div class="card">
+                <i class="fa-solid fa-car-battery icon"></i>
+                <h3>Inverter & Battery Setup</h3>
+                <p>Seamless backup configuration combining durable smart inverters with resilient energy storage units.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="reviews-section" class="reviews-section">
+        <div class="container">
+            <h2 class="section-title">Our Project Gallery</h2>
+            <div class="gallery-container reviews-container">
+                <marquee behavior="scroll" direction="left">
+                    <img src="Images/roof-top-solar-work-1.jpg" alt="gallery-images" width="280" height="280" class="img-gallery">
+                    <img src="Images/solar-inverter-2.jpg" alt="gallery-images" width="280" height="280" class="img-gallery">
+                    <img src="Images/roff-top-solar-work-3.jpg" alt="gallery-images" width="280" height="280" class="img-gallery">
+                    <img src="Images/roof-top-solar-work-2.jpg" alt="gallery-images" width="280" height="280" class="img-gallery">
+                    <img src="Images/worker-at-site.jpg" alt="gallery-images" width="280" height="280" class="img-gallery">
+                    <img src="Images/worker-at-site-2.jpg" alt="gallery-images" width="280" height="280" class="img-gallery">
+                    <img src="Images/worker-at-site-3.jpg" alt="gallery-images" width="280" height="280" class="img-gallery">
+                    <img src="Images/worker-at-site-4.jpg" alt="gallery-images" width="280" height="280" class="img-gallery">
+                    <img src="Images/solar-inverter-1.jpg" alt="gallery-images" width="280" height="280" class="img-gallery">
+                    <img src="Images/solar-inverter-3.jpg" alt="gallery-images" width="280" height="280" class="img-gallery">
+                </marquee>
+            </div>
+        </div>
+    </section>
+
+    <section id="reviews-section" class="reviews-section">
+        <div class="container">
+            <h2 class="section-title">What Our Customers Say</h2>
+            <div id="reviewsContainer" class="reviews-container">
+                <p class="loading-text">Loading verified customer reviews...</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="leave-review" class="form-section container">
+        <div class="form-card">
+            <h2>Drop Us Your Feedback</h2>
+            <p>Have we completed a project for you? Let us know how the installation or maintenance went.</p>
+
+            <form id="reviewForm">
+                <div class="form-group">
+                    <label for="custName">Full Name</label>
+                    <input type="text" id="custName" required placeholder="John Doe">
+                </div>
+
+                <div class="form-group">
+                    <label for="serviceType">Service Delivered</label>
+                    <select id="serviceType" required>
+                        <option value="" disabled selected>Choose service performed...</option>
+                        <option value="Solar Installation">Solar Installation</option>
+                        <option value="Electrical Maintenance">Electrical Maintenance & Repairs</option>
+                        <option value="Inverter & Battery Setup">Inverter & Battery Setup</option>
+                        <option value="Inverter & Battery Setup">CCTV & Security Installation & Setup</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Rating</label>
+                    <div class="star-rating">
+                        <input type="radio" name="rating" id="star5" value="5" required><label for="star5"
+                            class="fa-solid fa-star"></label>
+                        <input type="radio" name="rating" id="star4" value="4"><label for="star4"
+                            class="fa-solid fa-star"></label>
+                        <input type="radio" name="rating" id="star3" value="3"><label for="star3"
+                            class="fa-solid fa-star"></label>
+                        <input type="radio" name="rating" id="star2" value="2"><label for="star2"
+                            class="fa-solid fa-star"></label>
+                        <input type="radio" name="rating" id="star1" value="1"><label for="star1"
+                            class="fa-solid fa-star"></label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="custComment">Your Review Comment</label>
+                    <textarea id="custComment" rows="5" required
+                        placeholder="Share details of your experience with our technical crew..."></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-submit">Publish Review</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 G-Sure Power Ltd. All Rights Reserved.</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
