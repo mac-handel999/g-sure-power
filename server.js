@@ -1,4 +1,6 @@
 const express = require('express');
+const cors = require('cors'); // <-- Add this
+
 const bodyParser = require('body-parser');
 const path = require('path');
 require('dotenv').config();
@@ -8,6 +10,7 @@ const admin = require('firebase-admin/app');
 const { getDatabase } = require('firebase-admin/database');
 
 const app = express();
+app.use(cors());
 const PORT = process.env.PORT || 5500;
 
 // ==========================================

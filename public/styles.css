@@ -4,7 +4,7 @@
     /* Golden Amber for Electricity/Solar */
     --bg-dark: #1e272e;
     --bg-light: #f8f9fa;
-    --text-main: #2c3e50;
+    --text-main: #fff;
     --text-muted: #7f8c8d;
     --card-border: #e2e8f0;
 }
@@ -13,7 +13,8 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: Georgia, 'Times New Roman', Times, serif, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -47,9 +48,13 @@ header {
     color: #fff;
     font-size: 1.5rem;
     font-weight: bold;
-    background-color: #fff;
+    
     border-radius: 80px;
     padding: 5px;
+}
+
+.logo-img {
+    border-radius: 80px;
 }
 
 nav a {
@@ -113,6 +118,15 @@ nav a:hover {
  
 }
 
+.hero-btn {
+    margin: 20px auto;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 10px;
+}
+
 .img-hero {
     border-radius: 20px;
     
@@ -124,6 +138,7 @@ nav a:hover {
     transform: translate(-10px);
     width: 350px;
     height: 350px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .img-gallery {
@@ -166,6 +181,7 @@ nav a:hover {
     /* Default single column on mobile screens */
     gap: 25px;
     margin-top: 30px;
+    color: #fff;
 }
 
 /* Tablet Screens (2 Columns) */
@@ -191,12 +207,18 @@ nav a:hover {
 
 /* Updated card padding adjustments for denser layout */
 .services-section .card {
-    background: #ffffff;
+    color: #fff;
+    background: linear-gradient(rgba(30, 39, 46, 0.85), rgba(30, 39, 46, 0.85)), url('Images/solar-panels.jpg') no-repeat center center/cover;
+    background-attachment: fixed;
     padding: 24px;
     border: 1px solid var(--card-border);
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
     transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card {
+    color: white;
 }
 
 .services-section .card:hover {
@@ -205,7 +227,7 @@ nav a:hover {
 }
 
 .services-section .card .icon {
-    font-size: 2.2rem;
+    font-size: 2.5rem;
     color: var(--primary-color);
     margin-bottom: 14px;
     display: inline-block;
@@ -375,6 +397,7 @@ footer {
 .cta {
     margin: 20px auto;
     padding: 20px;
+    color: #fff;
     text-align: center;
     display: flex;
     align-items: center;
