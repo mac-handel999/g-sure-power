@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // ==========================================
   async function loadReviews() {
     try {
-      const response = await fetch('/api/reviews');
+      const response = await fetch(  'http://localhost:5500/api/reviews');
       if (!response.ok) throw new Error("Network issues fetching database items.");
       
       const reviews = await response.json();
