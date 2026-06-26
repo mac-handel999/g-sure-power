@@ -1,11 +1,11 @@
 /* public/styles.css */
 :root {
-    --primary-color: #f39c12;
+    --primary-color: #f39c12; /*#f39c12*/
     /* Golden Amber for Electricity/Solar */
-    --bg-dark: #1e272e;
+    --bg-dark: green; /*#1e272e*/
     --bg-light: #f8f9fa;
     --text-main: #2c3e50;
-    --text-muted: #7f8c8d;
+    --text-muted: #fff;
     --card-border: #e2e8f0;
 }
 
