@@ -1,4 +1,19 @@
-
+# 1. Environment Secrets (CRITICAL)
 .env
+
+# 2. Dependency Directories
+node_modules/
+jspm_packages/
+web_modules/
+
+# 3. Log Files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+logs/
+*.log
+
+# 4. System OS Files
+.DS_Store
+Thumbs.db
 config.js
-node_modules

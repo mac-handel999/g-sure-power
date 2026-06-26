@@ -87,7 +87,12 @@ app.post('/api/reviews', async (req, res) => {
   }
 });
 
-// Start Server
-app.listen(PORT, () => {
-  console.log(`⚡ Server running on http://localhost:${PORT}`);
-});
+// Start Server// Only call app.listen if we are NOT running in a serverless environment (like Vercel)
+if (process.env.NODE_ENV !== 'production') {
+  app.listen(PORT, () => {
+    console.log(`⚡ Server running on http://localhost:${PORT}`);
+  });
+}
+
+// CRITICAL FOR VERCEL: Export the app instance
+module.exports = app;

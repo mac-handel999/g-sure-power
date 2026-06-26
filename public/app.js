@@ -5,11 +5,20 @@ document.addEventListener("DOMContentLoaded", () => {
   const reviewForm = document.getElementById("reviewForm");
 
   // ==========================================
+  // DYNAMIC BASE URL CONFIGURATION
+  // ==========================================
+  // If running via Live Server (5500/5501), explicitly point to the Node backend (3000)
+  // Otherwise, use relative routing if running directly through the Node server
+  const BASE_URL = (window.location.port === "5500" || window.location.port === "5000") 
+    ? "http://localhost:5500" 
+    : "";
+
+  // ==========================================
   // FUNCTION: FETCH & DISPLAY REVIEWS
   // ==========================================
   async function loadReviews() {
     try {
-      const response = await fetch(  'http://localhost:5500/api/reviews' || '/api/reviews' );
+      const response = await fetch(`${BASE_URL}/api/reviews`);
       if (!response.ok) throw new Error("Network issues fetching database items.");
       
       const reviews = await response.json();
@@ -70,24 +79,27 @@ document.addEventListener("DOMContentLoaded", () => {
     const payload = { name, service, rating, comment };
 
     try {
-      const response = await fetch('/api/reviews' || 'http://localhost:5500/api/reviews' , {
+      const response = await fetch(`${BASE_URL}/api/reviews`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)
       });
 
+      // Handle cases where the server sends an unexpected non-JSON response error
+      if (!response.ok) {
+        const errText = await response.text();
+        throw new Error(errText || "Server error encountered during submission.");
+      }
+
       const result = await response.json();
 
-      if (response.ok) {
-        alert("Success! Thank you for your feedback.");
-        reviewForm.reset();
-        loadReviews(); // Instant dynamic re-render update
-      } else {
-        alert("Error: " + result.error);
-      }
+      alert("Success! Thank you for your feedback.");
+      reviewForm.reset();
+      loadReviews(); // Instant dynamic re-render update
+
     } catch (error) {
       console.error("Submission error:", error);
-      alert("Could not process submit transmission over web pipelines.");
+      alert(`Could not process submit transmission over web pipelines.\nDetails: ${error.message}`);
     }
   });
 

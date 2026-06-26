@@ -219,6 +219,11 @@ nav a:hover {
 
 #grid, .card h3 {
     color: white;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px auto;
+    font-weight: bold;
 }
 
 .services-section .card:hover {
