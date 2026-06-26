@@ -4,7 +4,7 @@
     /* Golden Amber for Electricity/Solar */
     --bg-dark: #1e272e;
     --bg-light: #f8f9fa;
-    --text-main: #fff;
+    --text-main: #2c3e50;
     --text-muted: #7f8c8d;
     --card-border: #e2e8f0;
 }
@@ -217,7 +217,7 @@ nav a:hover {
     transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-.card {
+#grid, .card h3 {
     color: white;
 }
 
