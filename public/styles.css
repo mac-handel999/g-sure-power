@@ -1,0 +1,565 @@
+/* public/styles.css */
+:root {
+    --primary-color: #f39c12; 
+    /* Golden Amber for Electricity/Solar */
+    --bg-dark: green; 
+    --bg-light: #f8f9fa;
+    --text-main: #2c3e50;
+    --text-muted: #fff;
+    --card-border: #e2e8f0;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Georgia, 'Times New Roman', Times, serif, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    color: var(--text-main);
+    background-color: #ffffff;
+    line-height: 1.6;
+    overflow-x: hidden; /* Prevents unwanted horizontal scrolling on mobile */
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* ==========================================
+   HEADER NAVBAR
+   ========================================== */
+header {
+    background-color: var(--bg-dark);
+    padding-top: 10px;
+    padding: 15px ;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Allows stacking if elements run out of space */
+    gap: 15px;
+}
+
+.logo {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-radius: 80px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    border-radius: 80px;
+    max-width: 100%;
+    height: auto;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+nav a {
+    color: #bdc3c7;
+    text-decoration: none;
+    margin-left: 20px;
+    transition: color 0.3s;
+    font-size: 0.95rem;
+    white-space: nowrap;
+}
+
+nav a:hover {
+    color: var(--primary-color);
+}
+
+.btn {
+    background-color: var(--primary-color);
+    color: #fff !important;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+/* ==========================================
+   HERO SECTION
+   ========================================== */
+.hero {
+    background: linear-gradient(rgba(30, 39, 46, 0.85), rgba(30, 39, 46, 0.85)), url('Images/helmet-img.jpg') no-repeat center center/cover;
+    background-attachment: fixed; /* Switched from fixed to scroll for better mobile performance */
+    color: #fff;
+    padding: 60px 0;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .hero {
+        background-attachment: fixed;
+        padding: 100px 0;
+    }
+}
+
+.hero h1 {
+    font-size: clamp(1.8rem, 5vw, 2.8rem); /* Dynamically scales down on mobile */
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.hero p {
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    margin-bottom: 30px;
+    max-width: 700px;
+    margin-inline: auto;
+    color: #d2dae2;
+}
+
+.hero-flex {
+    padding: 10px;
+    display: flex;
+    flex-direction: column; /* Stack vertically on small screens */
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+@media (min-width: 768px) {
+    .hero-flex {
+        flex-direction: row; /* Return to horizontal layout on desktop */
+        justify-content: space-evenly;
+    }
+}
+
+.hero-img {
+    margin: 10px auto;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 100%;
+}
+
+.hero-btn {
+    margin: 20px auto;
+    padding: 10px;
+    display: flex;
+    flex-direction: column; /* Stack CTAs on very small frames */
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+@media (min-width: 480px) {
+    .hero-btn {
+        flex-direction: row;
+    }
+}
+
+.img-hero {
+    border-radius: 20px;
+    width: 260px; /* Keeps responsive containment */
+    height: 283px;
+}
+
+/* Hover Adjustments for Mobile Responsiveness */
+@media (min-width: 1024px) {
+    .img-gallery:hover, .img-hero:hover {
+        box-shadow: 0 4px 15px #000;
+        transform: translateX(-10px);
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+}
+
+.img-gallery {
+    border-radius: 20px;
+    width: 280px;
+    height: 280px;
+    box-shadow: 2px 3px 6px gray;
+}
+
+.btn-primary {
+    padding: 12px 28px;
+    font-size: 1.1rem;
+    text-decoration: none;
+}
+
+/* ==========================================
+   MAIN SERVICES SECTION
+   ========================================== */
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 4px;
+    background: var(--primary-color);
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+/* Grid Framework for 16 Services */
+.services-section .grid {
+    display: grid;
+    grid-template-columns: 1fr; /* 1 Column on Mobile Phones */
+    gap: 25px;
+    margin-top: 30px;
+    color: #fff;
+}
+
+@media (min-width: 640px) {
+    .services-section .grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 Columns on Tablets */
+    }
+}
+
+@media (min-width: 900px) {
+    .services-section .grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 Columns on Medium Desktops */
+    }
+}
+
+@media (min-width: 1200px) {
+    .services-section .grid {
+        grid-template-columns: repeat(4, 1fr); /* 4 Columns on Large Displays */
+    }
+}
+
+.services-section .card {
+    color: #fff;
+    background: linear-gradient(rgba(30, 39, 46, 0.85), rgba(30, 39, 46, 0.85)), url('Images/solar-panels.jpg') no-repeat center center/cover;
+    background-attachment: scroll; /* Optimized mobile execution */
+    padding: 24px;
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+#grid, .card h3 {
+    color: white;
+    background-color: transparent; /* Changed from #fff to fix transparent readability */
+    border-radius: 10px;
+    padding: 5px 0;
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+.services-section .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.services-section .card .icon {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 14px;
+    display: inline-block;
+}
+
+.services-section .card h3 {
+    font-size: 1.15rem;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #ffffff; /* Explicitly visible against overlay backgrounds */
+}
+
+.services-section .card p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+
+/* ==========================================
+   REVIEWS FEED SECTION
+   ========================================== */
+.reviews-section {
+    background-color: var(--bg-light);
+    padding: 40px 0;
+}
+
+@media (min-width: 768px) {
+    .reviews-section {
+        padding: 60px 0;
+    }
+}
+
+.reviews-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Better sizing thresholds on small devices */
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.loading-text {
+    text-align: center;
+    grid-column: 1 / -1;
+    color: var(--text-main);
+}
+
+.review-card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--card-border);
+}
+
+.review-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.review-client-name {
+    font-weight: bold;
+    font-size: 1.05rem;
+}
+
+.review-stars {
+    color: var(--primary-color);
+    font-size: 0.9rem;
+}
+
+.review-tag {
+    display: inline-block;
+    background-color: #e8f4fd;
+    color: #1f6feb;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 3px 8px;
+    border-radius: 20px;
+    margin-bottom: 12px;
+}
+
+.review-text {
+    color: #4a5568;
+    font-style: italic;
+    font-size: 0.95rem;
+}
+
+/* ==========================================
+   FEEDBACK FORM ENGINE
+   ========================================== */
+.form-section {
+    padding: 40px 0;
+}
+
+@media (min-width: 768px) {
+    .form-section {
+        padding: 60px 0;
+    }
+}
+
+.form-card {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px; /* Reduced mobile padding */
+    background: linear-gradient(rgba(30, 39, 46, 0.85), rgba(30, 39, 46, 0.85)), url('Images/helmet-img-2.jpg') no-repeat center center/cover;
+    background-attachment: scroll;
+    border: 1px solid var(--card-border);
+    color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+@media (min-width: 480px) {
+    .form-card {
+        padding: 40px;
+    }
+}
+
+.form-card h2 {
+    margin-bottom: 8px;
+    font-size: clamp(1.3rem, 3.5vw, 1.8rem);
+}
+
+.form-card p {
+    margin-bottom: 24px;
+    color: #cbd5e1;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: 10px;
+    border: 1px solid #cbd5e1;
+    border-radius: 4px;
+    font-size: 1rem;
+    width: 100%;
+}
+
+.star-rating {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    gap: 6px;
+    font-size: 1.75rem;
+}
+
+.star-rating input {
+    display: none;
+}
+
+.star-rating label {
+    color: #cbd5e1;
+    cursor: pointer;
+    transition: color 0.2s;
+    margin: 0;
+}
+
+.star-rating input:checked~label,
+.star-rating label:hover,
+.star-rating label:hover~label {
+    color: var(--primary-color);
+}
+
+.btn-submit {
+    width: 100%;
+    border: none;
+    padding: 12px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+/* ==========================================
+   FOOTER & CTAs
+   ========================================== */
+footer {
+    background: var(--bg-dark);
+    color: var(--text-muted);
+    text-align: center;
+    padding: 25px 15px;
+    font-size: 0.9rem;
+}
+
+.cta {
+    margin: 20px auto;
+    padding: 20px;
+    color: #fff;
+    text-align: center;
+    display: flex;
+    flex-direction: column; /* Stack CTA modules vertically on mobile layout */
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+
+/* ==========================================
+   PROJECT GALLERY STANDARDIZATION
+   ========================================== */
+.img-gallery {
+    width: 280px;
+    /* Fluidly fills its grid space fraction */
+    height: 280px;
+    /* Enforces one universal structural height matching standard cards */
+    object-fit: cover;
+    gap: 30px;
+    /* Crops image cleanly inside bounding borders without squishing */
+    border-radius: 20px;
+    box-shadow: 2px 3px 6px gray;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Maintain hover state scaling controls without breaking design dimensions */
+@media (min-width: 1024px) {
+    .img-gallery:hover {
+        box-shadow: 0 4px 15px #000;
+        transform: scale(1.03);
+        /* Scaled magnification instead of raw hardcoded pixel dimension changes */
+    }
+}
+
+
+@media (min-width: 768px) {
+    .cta {
+        flex-direction: row; /* Horizontal split layout on desktop sizes */
+        justify-content: space-evenly;
+    }
+}
+/* ==========================================
+   MOBILE MEDIA QUERY EXTRA ISOLATIONS
+   ========================================== */
+@media (max-width: 767px) {
+    header {
+        padding: 10px 0;
+        /* Shrinks the master wrapper padding */
+    }
+
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+        gap: 8px;
+        /* Tighter containment gap */
+    }
+
+    .logo {
+        font-size: 1.2rem;
+        /* Shrinks textual branding footprint */
+        padding: 2px;
+    }
+
+    .logo-img {
+        max-height: 45px;
+        /* Restricts logo height explosion */
+        width: auto;
+    }
+
+    nav {
+        flex-direction: row;
+        /* Arranges links side-by-side or cleanly wrapped */
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+        width: 100%;
+    }
+
+    nav a {
+        margin-left: 0;
+        font-size: 0.9rem;
+        /* Crisp, readable, yet compact utility text */
+        padding: 4px 8px;
+        display: inline-block;
+        width: auto;
+        /* Stops links from taking whole rows */
+    }
+
+    .navbar .btn {
+        display: inline-block;
+        margin-top: 2px;
+        padding: 6px 12px;
+        font-size: 0.85rem;
+    }
+}
